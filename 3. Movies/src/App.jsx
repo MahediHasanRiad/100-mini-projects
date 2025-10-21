@@ -17,20 +17,22 @@ function App() {
     setValue({ [e.target.name]: e.target.value });
   };
 
+
+
   /** search */
-  let searchMovies = allMovis
-  if(value.search){
-    searchMovies = allMovis.filter(movie => movie.Title.toLowerCase().includes(value.search.toLowerCase()))
-  }else{
-    searchMovies = allMovis
+  let searchMovies = allMovis;
+
+  if (value.search) {
+    searchMovies = allMovis.filter((movie) =>
+      movie.Title.toLowerCase().includes(value.search.toLowerCase())
+    );
+  }
+  
+    /** filter by Year */
+  if (value.year) {
+    searchMovies = allMovis.filter((movie) => movie.Year === value.year);
   }
 
-  /** filter by Year */
-  if(value.year){
-    searchMovies = allMovis.filter(movie => movie.Year === value.year)
-  }else{
-    searchMovies = allMovis
-  }
 
   return (
     <Wrapper>

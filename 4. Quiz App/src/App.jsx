@@ -34,32 +34,23 @@ function App() {
     const currentQuize = quizes[0];
     const { question, answer } = currentQuize;
     
-    if (answer === value) {
-      setResult({
-        ...result,
-        [indexNum]: {
-          Question: question,
-          Your_answer: value,
-          Currect_answer: answer,
-          isCurrect: true,
-        },
-      });
-    } else {
-      setResult({
-        ...result,
-        [indexNum]: {
-          Question: question,
-          Your_answer: value,
-          Currect_answer: answer,
-          isCurrect: false,
-        },
-      });
-    }
-    // select
-    setIsSelect(true)
+    const isCorrect = answer === value;
+  
+  const newResult = {
+    ...result,
+    [indexNum]: {
+      Question: question,
+      Your_answer: value,
+      Currect_answer: answer,
+      isCurrect: isCorrect,
+    },
+  };
+  
+  setResult(newResult);
+  setIsSelect(true);
 
     /** total right answer */
-    const score = Object.values(result).filter((d) => d.isCurrect).length + 1;
+    const score = Object.values(newResult).filter((d) => d.isCurrect).length;
     setTotalScore(score);
   };
 

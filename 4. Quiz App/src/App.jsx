@@ -33,7 +33,6 @@ function App() {
   const selectOption = (value) => {
     const currentQuize = quizes[0];
     const { question, answer } = currentQuize;
-    
     const isCorrect = answer === value;
   
   const newResult = {
@@ -54,7 +53,6 @@ function App() {
     setTotalScore(score);
   };
 
-console.log(focus)
   return (
     <Wrapper>
       {/* display condition  */}

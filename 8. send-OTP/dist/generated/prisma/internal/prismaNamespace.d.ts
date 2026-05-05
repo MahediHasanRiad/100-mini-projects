@@ -232,6 +232,7 @@ export type FieldRef<Model, FieldType> = runtime.FieldRef<Model, FieldType>;
 type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRef<Model, FieldType>;
 export declare const ModelName: {
     readonly User: "User";
+    readonly userOTP: "userOTP";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{
@@ -244,7 +245,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "user";
+        modelProps: "user" | "userOTP";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -322,6 +323,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        userOTP: {
+            payload: Prisma.$userOTPPayload<ExtArgs>;
+            fields: Prisma.userOTPFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.userOTPFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.userOTPFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>;
+                };
+                findFirst: {
+                    args: Prisma.userOTPFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.userOTPFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>;
+                };
+                findMany: {
+                    args: Prisma.userOTPFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>[];
+                };
+                create: {
+                    args: Prisma.userOTPCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>;
+                };
+                createMany: {
+                    args: Prisma.userOTPCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.userOTPCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>[];
+                };
+                delete: {
+                    args: Prisma.userOTPDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>;
+                };
+                update: {
+                    args: Prisma.userOTPUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.userOTPDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.userOTPUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.userOTPUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>[];
+                };
+                upsert: {
+                    args: Prisma.userOTPUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$userOTPPayload>;
+                };
+                aggregate: {
+                    args: Prisma.UserOTPAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateUserOTP>;
+                };
+                groupBy: {
+                    args: Prisma.userOTPGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.UserOTPGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.userOTPCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.UserOTPCountAggregateOutputType> | number;
+                };
+            };
+        };
     };
 } & {
     other: {
@@ -365,6 +440,15 @@ export declare const UserScalarFieldEnum: {
     readonly updatedAt: "updatedAt";
 };
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum];
+export declare const UserOTPScalarFieldEnum: {
+    readonly id: "id";
+    readonly userId: "userId";
+    readonly email: "email";
+    readonly expired: "expired";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type UserOTPScalarFieldEnum = (typeof UserOTPScalarFieldEnum)[keyof typeof UserOTPScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";
@@ -517,6 +601,7 @@ export type PrismaClientOptions = ({
 };
 export type GlobalOmitConfig = {
     user?: Prisma.UserOmit;
+    userOTP?: Prisma.userOTPOmit;
 };
 export type LogLevel = 'info' | 'query' | 'warn' | 'error';
 export type LogDefinition = {

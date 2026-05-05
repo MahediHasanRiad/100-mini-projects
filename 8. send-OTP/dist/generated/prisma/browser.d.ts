@@ -7,4 +7,9 @@ export * from './enums.js';
  *
  */
 export type User = Prisma.UserModel;
+/**
+ * Model userOTP
+ *
+ */
+export type userOTP = Prisma.userOTPModel;
 //# sourceMappingURL=browser.d.ts.map

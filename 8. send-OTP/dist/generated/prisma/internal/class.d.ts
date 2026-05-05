@@ -128,6 +128,17 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
     get user(): Prisma.UserDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
+    /**
+     * `prisma.userOTP`: Exposes CRUD operations for the **userOTP** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more UserOTPS
+      * const userOTPS = await prisma.userOTP.findMany()
+      * ```
+      */
+    get userOTP(): Prisma.userOTPDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
 }
 export declare function getPrismaClientClass(): PrismaClientConstructor;
 //# sourceMappingURL=class.d.ts.map

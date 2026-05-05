@@ -68,7 +68,8 @@ export const JsonNull = runtime.JsonNull;
  */
 export const AnyNull = runtime.AnyNull;
 export const ModelName = {
-    User: 'User'
+    User: 'User',
+    userOTP: 'userOTP'
 };
 /**
  * Enums
@@ -84,6 +85,14 @@ export const UserScalarFieldEnum = {
     email: 'email',
     name: 'name',
     password: 'password',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+export const UserOTPScalarFieldEnum = {
+    id: 'id',
+    userId: 'userId',
+    email: 'email',
+    expired: 'expired',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };

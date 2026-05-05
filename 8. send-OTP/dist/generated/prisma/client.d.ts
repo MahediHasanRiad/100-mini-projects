@@ -26,4 +26,9 @@ export { Prisma };
  *
  */
 export type User = Prisma.UserModel;
+/**
+ * Model userOTP
+ *
+ */
+export type userOTP = Prisma.userOTPModel;
 //# sourceMappingURL=client.d.ts.map

@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import { sendOTPcontroller } from './feature/controller/send-mail.controller.js'
 import { registerController } from './feature/controller/register.controller.js'
 import { verifyOTPcontroller } from './feature/controller/verify-OTP.controller.js'
+import { scheduleDeleteOTP } from './feature/service/corn.js'
 dotenv.config({path: './.env'})
 
 
@@ -17,6 +18,9 @@ app.post('/register', registerController)
 app.get('/send-OTP', sendOTPcontroller)
 app.post('/verify-OTP', verifyOTPcontroller)
 
+
+// cron job 
+scheduleDeleteOTP()
 
 
 app.listen(3000, () => {

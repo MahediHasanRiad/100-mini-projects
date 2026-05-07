@@ -38,6 +38,14 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
     console.log(`socket is connected ${socket.id}`)
     console.log('socket io connected')
+
+    socket.emit('welcome', `welcome riad !!! ${socket.id}`)
+
+    socket.broadcast.emit('rbroadcast', `welcome riad in Broadcast ${socket.id}`)
+
+    socket.on('emit-riad', (data) => {
+        console.log(data)
+    })
 })
 
 
